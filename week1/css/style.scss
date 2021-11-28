@@ -1,0 +1,234 @@
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #000;
+  --blue-color: #2d6797;
+  --red-color: #c00;
+  --grey-dark-color: #181818;
+  --grey-light-color: #dddddd;
+  /* Size */
+  --side-padding: 12px;
+  --avatar-size: 36px;
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--white-color);
+}
+header {
+  // 위치
+  display: flex;
+  justify-content: space-between;
+  padding: var(--side-padding);
+  // 크기
+  // 꾸미기
+  background-color: var(--black-color);
+  color: var(--white-color);
+  .logo {
+    //위치
+    align-items: center;
+    //크기
+    font-size: var(--font-large);
+    //꾸미기
+    i {
+      color: red;
+    }
+    .title {
+    }
+  }
+  .icons {
+    //위치
+    //크기
+    //꾸미기
+    i {
+      //위치
+      margin-right: var(--side-padding);
+      //크기
+      //꾸미기
+    }
+  }
+}
+
+//위치
+//크기
+//꾸미기
+
+.player {
+  //위치
+  position: sticky;
+  top: 0;
+  text-align: center;
+  //크기
+  height: 500px;
+  //꾸미기
+  background-color: var(--black-color);
+  iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+  }
+}
+
+.info {
+  padding: var(--side-padding);
+  .metadata {
+    .hashtags {
+      //위치
+      display: flex;
+      //크기
+      font-size: var(--font-small);
+      //꾸미기
+      color: var(--blue-color);
+      li {
+        margin-right: var(--side-padding);
+      }
+    }
+    .titleAndButton {
+      display: flex;
+      .title {
+        flex: 1;
+        font-size: var(--font-medium);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-right: var(--side-padding);
+      }
+      .moreBtn {
+        height: 100%;
+        i {
+        }
+      }
+    }
+    .views {
+      font-size: var(--font-small);
+      color: var(--grey-dark-color);
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--side-padding) 0;
+    li {
+      button {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--font-small);
+        color: var(--grey-dark-color);
+        i {
+          margin: 0 auto;
+          margin-bottom: calc(var(--side-padding) / 2);
+          font-size: 16px;
+          &.active {
+            color: var(--blue-color);
+          }
+        }
+      }
+    }
+  }
+
+  .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+    align-items: center;
+    .metadata {
+      display: flex;
+      align-items: center;
+      img {
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border-radius: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        .name {
+          font-size: var(--font-medium);
+        }
+        .subscribers {
+          font-size: var(--font-small);
+          color: var(--grey-dark-color);
+        }
+      }
+    }
+    .subscribe {
+      height: 50px;
+      width: 100px;
+      background-color: var(--red-color);
+      color: var(--white-color);
+      font-size: var(--font-medium);
+      border-radius: 7%;
+      text-decoration: uppercase;
+    }
+  }
+}
+
+.UpNext {
+  padding: 0 var(--side-padding);
+  .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--side-padding) / 2);
+  }
+  .item {
+    display: flex;
+    .img {
+      flex: 1 1 35%;
+      img {
+        width: 100%;
+      }
+    }
+    .info {
+      flex: 1 1 60%;
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: var(--font-small);
+      }
+      .name {
+        font-size: var(--font-micro);
+      }
+      .views {
+        font-size: var(--font-micro);
+        color: var(--grey-light-color);
+      }
+    }
+    .moreBtn {
+      flex: 1 1 5%;
+    }
+  }
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin: var(--side-padding) 0;
+  }
+}
