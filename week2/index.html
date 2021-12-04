@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>GuguDan</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class GuguDan extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            a: Math.ceil(Math.random() * 9),
+            b: Math.ceil(Math.random() * 9),
+            val: "",
+            ans: "",
+          };
+        }
+
+        onChange = (e) => {
+          this.setState({ val: e.target.value });
+        };
+
+        onSubmit = (e) => {
+          e.preventDefault();
+          if (parseInt(this.state.val) === this.state.a * this.state.b) {
+            this.setState((prev) => {
+              return {
+                ans: "정답" + prev.val,
+                a: Math.ceil(Math.random() * 9),
+                b: Math.ceil(Math.random() * 9),
+                val: "",
+              };
+            });
+          } else {
+            this.setState(() => {
+              return {
+                ans: "땡",
+                val: "",
+              };
+            });
+          }
+        };
+
+        render() {
+          return (
+            <React.Fragment>
+              <div>
+                {this.state.a} x {this.state.b}
+              </div>
+              <form onSubmit={this.onSubmit}>
+                <input
+                  type="number"
+                  value={this.state.val}
+                  onChange={this.onChange}
+                />
+                <button>제출</button>
+              </form>
+              <div>{this.state.ans}</div>
+            </React.Fragment>
+          );
+        }
+      }
+    </script>
+    <script type="text/babel">
+      ReactDOM.render(<GuguDan />, document.querySelector("#root"));
+    </script>
+  </body>
+</html>

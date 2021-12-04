@@ -2,4 +2,6 @@
 
 # Week 1
 
-![1.png](1.png)
+![w1_1.png](w1_1.png)
+
+![w1_2.png](w1_2.png)

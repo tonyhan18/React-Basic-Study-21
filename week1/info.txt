@@ -13,7 +13,7 @@ display:flex -> align-items를 안쓰고도 중앙정렬 하려면 text-align:ce
 
 ul에서 나오는 점 없애기
 ul {
-list-style: none;
+  list-style: none;
 }
 
 제목의 내용 제한 line-clamp 사용
@@ -30,9 +30,5 @@ calc(var(--padding) / 2));
 태그 두개를 두 줄로 바꿈 하는 방법
 flex-direction : column으로 하면 두 개가 수직으로 만들어진다.
 
----
-
-wiki 만들기
-float 사용
-
-background: linear-gradient
+경계선 만들기
+border-top 1px solid dark

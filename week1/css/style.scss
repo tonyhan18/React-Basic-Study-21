@@ -24,7 +24,7 @@
 
 body {
   font-family: Roboto;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 ul {
@@ -177,7 +177,7 @@ header {
       }
     }
     .subscribe {
-      height: 50px;
+      height: 40px;
       width: 100px;
       background-color: var(--red-color);
       color: var(--white-color);
